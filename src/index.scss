@@ -40,13 +40,18 @@ code {
     .m-r-#{$i} {
       margin-right: unquote(($i) + '%');
     }
+    .m-t-#{$i} {
+      margin-top: unquote(($i) + '%');
+    }
+    .m-b-#{$i} {
+      margin-bottom: unquote(($i) + '%');
+    }
     .m-v-#{$i} {
       margin: unquote(($i) + '%') 0;
     }
     .m-h-#{$i} {
       margin: 0 unquote(($i) + '%');
     }
-
   }
 }
 @include margin();
@@ -55,11 +60,41 @@ code {
   display: flex;
   flex-wrap: wrap;
 }
+.ai-c {
+  align-items: center;
+}
+.jc-c {
+  justify-content: center;
+}
+.jc-sb {
+  justify-content: space-between;
+}
 
+.jc-fe {
+  justify-content: flex-end;
+}
 .center {
   align-items: center;
   justify-content: center;
 }
 .vh {
   height: 100vh;
+}
+.t-al-l {
+  text-align: left;
+}
+.t-al-r {
+  text-align: right;
+}
+.t-al-c {
+  text-align: center;
+}
+.btn {
+  padding: 5px 12px ;
+  border: 1px solid #e8e6e6;
+  color: white;
+  background: white;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,0 +1,15 @@
+@import '../../../Scss/colors.scss';
+
+.mail__list__elm{
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e8e6e6;
+    color: $primaryLiteFontColor;
+    font-weight: 600;
+    .MuiButtonBase-root{
+        padding: 0;
+    }
+    &.read{
+        color: $mailReadFontColor;
+    }
+}

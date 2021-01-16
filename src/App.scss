@@ -1,3 +1,5 @@
+@import './Scss/colors.scss';
+
 $font-stack: 'Source Sans Pro', sans-serif;
 
 .app__container {
@@ -5,4 +7,32 @@ $font-stack: 'Source Sans Pro', sans-serif;
   display: flex;
   font-family: $font-stack;
   overflow: hidden;
+}
+
+.bg--red {
+  background: $redHue1;
+}
+.bg--green {
+  background: $greenHue1;
+}
+.bg--blue {
+  background: $blueHue1;
+}
+.bg--blue2 {
+  background: $blueHue2;
+}
+.bg--orange {
+  background: $orangeHue1;
+}
+.bg--white {
+  background: $white;
+}
+.bg--color1 {
+  background: $color1;
+}
+.bg--color2 {
+  background: $color2;
+}
+.bg--mailRead {
+  background: $mailReadBg;
 }

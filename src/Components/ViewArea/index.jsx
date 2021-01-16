@@ -2,15 +2,15 @@ import React from 'react';
 import './ViewArea.scss';
 import Header from '../Header';
 import Routes from '../../routes';
-function ViewArea({ isPanelOpen }) {
+function ViewArea({ isPanelOpen, togglePanel }) {
   return (
     <div
       className="viewArea"
       style={{
-        width: isPanelOpen ? 'calc(100% - 185px)' : 'calc(100% - 60px)',
+        marginLeft: isPanelOpen ? '185px' : '60px',
       }}
     >
-      <Header />
+      <Header togglePanel={togglePanel} />
       <Routes />
     </div>
   );

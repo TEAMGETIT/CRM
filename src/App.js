@@ -25,8 +25,8 @@ function App({ location }) {
         <Route path="/login" component={Login} />
       ) : (
         <React.Fragment>
-          <SideExpansionPanel />
-          <ViewArea isPanelOpen={isPanelOpen} />
+          <SideExpansionPanel isPanelOpen={isPanelOpen}/>
+          <ViewArea isPanelOpen={isPanelOpen} togglePanel={() => setIsPanelOpen(!isPanelOpen)}/>
         </React.Fragment>
       )}
     </div>

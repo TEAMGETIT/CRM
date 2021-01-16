@@ -2,35 +2,22 @@
 
 .sidebar {
   background: $sidePannelColor;
-  height: 100vh;
   padding-bottom: 10px;
-  transition: width 500ms;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: width 0.5s;
   .header {
     background-color: $headerColor;
     display: flex;
-    height: 8%;
+    height: 8vh;
     color: white;
     font-weight: 700;
     justify-content: center;
     align-items: center;
-    .toggle-side-menu {
-      position: relative;
-      right: -15px;
-      top: 10px;
-      float: right;
-      .icon {
-        background: #6559ff;
-        border-radius: 15px;
-        width: 1.2em;
-        height: 1.2em;
-        margin: unset;
-        border: 3px solid $white;
-        .icon {
-          width: calc(100% - 12px);
-          height: calc(100% - 6px);
-        }
-      }
-    }
   }
   .side-menu-holder {
     .side-menu {

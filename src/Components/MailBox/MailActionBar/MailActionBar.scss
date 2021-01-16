@@ -1,0 +1,25 @@
+@import '../../../Scss/colors.scss';
+
+.mail__actionbar {
+  border-bottom: 1px solid #e8e6e6;
+  padding: 20px;
+  box-sizing: border-box;
+  h1 {
+    font-weight: 600;
+    color: $primaryColor;
+  }
+  .btn {
+    color: $color2;
+  }
+  .icon {
+    width: fit-content;
+    height: fit-content;
+    .icon__elem {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  .refresh {
+    flex: 1;
+  }
+}

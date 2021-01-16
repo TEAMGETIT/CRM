@@ -30,7 +30,7 @@ const expansionPannelIconsData = [
   },
 ];
 
-function SideExpansionPanel({ location, onPanelexpand }) {
+function SideExpansionPanel({ location, isPanelOpen }) {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   const [curretRoutePath, setCurretRoutePath] = useState();
 
@@ -57,22 +57,14 @@ function SideExpansionPanel({ location, onPanelexpand }) {
     }
   }, [location]);
 
-  const toggleSideBar = (sideBarOpen) => {
-    setSideBarOpen(sideBarOpen);
-    onPanelexpand(sideBarOpen);
-  };
+  useEffect(() =>{
+    setSideBarOpen(isPanelOpen)
+  }, [isPanelOpen])
 
   return (
     <div className="sidebar" style={{ width: sideBarOpen ? '185px' : '70px' }}>
       <div className="header">
         IN+
-        <div className="toggle-side-menu">
-          {/* <Icon
-            name="menu"
-            // onClick={() => this.toggleSideBar(!sideBarOpen)}
-            className="customized-sidebar-icon"
-          /> */}
-        </div>
       </div>
       <div className="side-menu-holder">
         {expansionPannelIconsData.map((iconData) => (
