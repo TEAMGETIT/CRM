@@ -1,10 +1,12 @@
+@import "../../Scss/colors.scss";
+
 .sidebar {
-  background: #2f4050;
+  background: $sidePannelColor;
   height: 100vh;
   padding-bottom: 10px;
   transition: width 500ms;
   .header {
-    background-color: #243846;
+    background-color: $headerColor;
     display: flex;
     height: 8%;
     color: white;
@@ -22,7 +24,7 @@
         width: 1.2em;
         height: 1.2em;
         margin: unset;
-        border: 3px solid white;
+        border: 3px solid $white;
         .icon {
           width: calc(100% - 12px);
           height: calc(100% - 6px);
@@ -35,19 +37,19 @@
       display: flex;
       &.selected {
         background: #293846;
-        border-left: 4px solid #37ab8d;
+        border-left: 4px solid $selectedBorder;
         .customized-sidebar-icon {
           margin: 13px 14px;
         }
         .icon {
           .icon__elem--color {
-            background: white;
+            background: $white;
           }
         }
       }
       .menu-item-header {
         padding-top: 16px;
-        color: white;
+        color: $white;
         font-weight: 600;
         font-size: 15px;
       }

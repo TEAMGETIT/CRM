@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
-import Login from './Components/Login'
+import Login from './Components/Login';
 import { withRouter, Route, Redirect } from 'react-router-dom';
 import SideExpansionPanel from './Components/SideExpansionPanel';
+import ViewArea from './Components/ViewArea';
 
-function App({location}) {
-  const [curretRoutePath, setCurretRoutePath] = useState('')
+function App({ location }) {
+  const [curretRoutePath, setCurretRoutePath] = useState('');
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
   useEffect(() => {
     if (
       location.pathname !== '/login' &&
@@ -18,13 +20,13 @@ function App({location}) {
   }, [location]);
 
   return (
-    <div className="app-container">
+    <div className="app__container">
       {curretRoutePath === '/login' ? (
         <Route path="/login" component={Login} />
       ) : (
         <React.Fragment>
           <SideExpansionPanel />
-          {/* <ViewArea isPanelOpen={isPanelOpen} /> */}
+          <ViewArea isPanelOpen={isPanelOpen} />
         </React.Fragment>
       )}
     </div>

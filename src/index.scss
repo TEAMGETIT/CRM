@@ -15,14 +15,41 @@ code {
 @mixin width() {
   //iterate over all the columns
   @for $i from 1 through 100 {
-      // generate column specific css class
-      // width computed in percentage
-      .w-#{$i} {
-          width: unquote(($i) + '%');
-      }
+    // generate column specific css class
+    // width computed in percentage
+    .w-#{$i} {
+      width: unquote(($i) + '%');
+    }
   }
 }
 @include width();
+
+@mixin margin() {
+  //iterate over all the columns
+  @for $i from 1 through 100 {
+    // generate margin css class
+    // margin computed in percentage
+    .m-#{$i} {
+      margin: unquote(($i) + '%');
+    }
+    // generate column specific margin left css class
+    .m-l-#{$i} {
+      margin-left: unquote(($i) + '%');
+    }
+    // generate column specific margin left css class
+    .m-r-#{$i} {
+      margin-right: unquote(($i) + '%');
+    }
+    .m-v-#{$i} {
+      margin: unquote(($i) + '%') 0;
+    }
+    .m-h-#{$i} {
+      margin: 0 unquote(($i) + '%');
+    }
+
+  }
+}
+@include margin();
 
 .d-flex {
   display: flex;
