@@ -1,0 +1,23 @@
+.icon {
+    width: 1.85em;
+    height: 1.85em;
+    overflow: hidden;
+    .icon__elem{
+        margin-top: 3px;
+        display: inline-block;
+        width: calc(100% - 13px);
+        height: calc(100% - 6px);
+        -webkit-mask-size: 100%;
+        mask-size: 100%;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+    }
+    .icon__elem--color {
+        background: #a7b1c2
+    }
+    .icon__elem--selected {
+        background: white;
+    }
+}

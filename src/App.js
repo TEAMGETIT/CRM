@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import './App.scss';
+import Login from './Components/Login'
+import { withRouter, Route, Redirect } from 'react-router-dom';
+import SideExpansionPanel from './Components/SideExpansionPanel';
 
-function App() {
+function App({location}) {
+  const [curretRoutePath, setCurretRoutePath] = useState('')
+  useEffect(() => {
+    if (
+      location.pathname !== '/login' &&
+      !localStorage.getItem('userdetails')
+    ) {
+      window.location.href = '/login';
+    } else {
+      setCurretRoutePath(location.pathname);
+    }
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      {curretRoutePath === '/login' ? (
+        <Route path="/login" component={Login} />
+      ) : (
+        <React.Fragment>
+          <SideExpansionPanel />
+          {/* <ViewArea isPanelOpen={isPanelOpen} /> */}
+        </React.Fragment>
+      )}
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

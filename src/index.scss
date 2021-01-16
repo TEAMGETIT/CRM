@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@mixin width() {
+  //iterate over all the columns
+  @for $i from 1 through 100 {
+      // generate column specific css class
+      // width computed in percentage
+      .w-#{$i} {
+          width: unquote(($i) + '%');
+      }
+  }
+}
+@include width();
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+.vh {
+  height: 100vh;
+}
