@@ -1,7 +1,7 @@
 import React from 'react';
 import './ViewArea.scss';
 import Header from '../Header';
-
+import Routes from '../../routes';
 function ViewArea({ isPanelOpen }) {
   return (
     <div
@@ -11,6 +11,7 @@ function ViewArea({ isPanelOpen }) {
       }}
     >
       <Header />
+      <Routes />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import Icon from '../Icon';
 
 const expansionPannelIconsData = [
   { routePath: '/dashboard', displayName: 'Dashboard', iconName: 'dashboard' },
-  { routePath: '/diamond', displayName: 'Layout', iconName: 'diamond' },
+  { routePath: '/layout', displayName: 'Layout', iconName: 'diamond' },
   { routePath: '/graph', displayName: 'Graphs', iconName: 'bar-graph' },
   { routePath: '/mailbox', displayName: 'Mailbox', iconName: 'envelope' },
   { routePath: '/metrics', displayName: 'Metrics', iconName: 'pie-chart' },
@@ -76,7 +76,11 @@ function SideExpansionPanel({ location, onPanelexpand }) {
       </div>
       <div className="side-menu-holder">
         {expansionPannelIconsData.map((iconData) => (
-          <SideExpansionPanelElm iconName={iconData.iconName} routePath={iconData.routePath} displayName={iconData.displayName} />
+          <SideExpansionPanelElm
+            iconName={iconData.iconName}
+            routePath={iconData.routePath}
+            displayName={iconData.displayName}
+          />
         ))}
       </div>
     </div>

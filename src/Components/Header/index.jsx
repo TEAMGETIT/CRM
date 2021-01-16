@@ -5,7 +5,7 @@ import { headerIconColor } from '../../Scss/colors.scss';
 function Header() {
   return (
     <div className="w-100 header__bar d-flex">
-      <div className="d-flex m-l-4">
+      <div className="d-flex m-l-2">
         <Icon name="menu" className="menu" />
         <div className="global__search">Search for something...</div>
       </div>
