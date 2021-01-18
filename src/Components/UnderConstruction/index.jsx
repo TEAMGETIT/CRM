@@ -3,7 +3,7 @@ import React from 'react';
 
 function UnderConstruction() {
   const imagePath = `${window.location.origin}/images/under-construction.png`;
-  return <img style={{'width': '100%'}} src={imagePath} />;
+  return <img style={{'width': '100%', minHeight: '92vh'}} src={imagePath} />;
 }
 
 export default UnderConstruction;

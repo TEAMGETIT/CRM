@@ -2,7 +2,7 @@
 
 .mailbox__controlpanel {
   color: $color1;
-  padding: 20px 50px;
+  padding: 0 50px;
   font-weight: 600;
   .icon {
     width: 1.65em;
@@ -11,20 +11,24 @@
   .mailbox__controlpanel__header {
     color: $color1;
   }
-  .label__elm {
+  .controlpanel__label__elm {
     font-size: 13px;
     padding: 6px 12px;
     background-color: $white;
     border: 0.5px solid #e8e6e6;
     border-radius: 3px;
     .icon {
-        width: 1em;
-        height: 1em;
+      width: 1em;
+      height: 1em;
       .icon__elem {
         width: 10px;
         height: 10px;
       }
     }
+  }
+  .category__item,
+  .folder__item {
+    cursor: pointer;
   }
   .folder__item {
     border-bottom: 1px solid #e0e0e0;

@@ -3,11 +3,11 @@ import ListItem from '../../ListItem';
 
 function MailBoxCategories() {
   const categoriesList = [
-    { categoryDisplayname: 'Work', iconName: 'circle', iconColor: 'bg--green'},
-    { categoryDisplayname: 'Documents', iconName: 'circle', iconColor: 'bg--red' },
-    { categoryDisplayname: 'Social', iconName: 'circle', iconColor: 'bg--blue2' },
-    { categoryDisplayname: 'Advertising', iconName: 'circle', iconColor: 'bg--blue' },
-    { categoryDisplayname: 'Clients', iconName: 'circle', iconColor: 'bg--orange' },
+    { categoryDisplayname: 'work', iconName: 'circle', },
+    { categoryDisplayname: 'documents', iconName: 'circle' },
+    { categoryDisplayname: 'social', iconName: 'circle' },
+    { categoryDisplayname: 'advertising', iconName: 'circle' },
+    { categoryDisplayname: 'clients', iconName: 'circle'},
   ];
   return (
     <div className="w-100">
@@ -17,7 +17,6 @@ function MailBoxCategories() {
           <ListItem
             itemName={category.categoryDisplayname}
             itemIconName={category.iconName}
-            iconColor={category.iconColor}
           />
         </div>
       ))}

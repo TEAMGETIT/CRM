@@ -1,12 +1,12 @@
 @import "../../Scss/colors.scss";
 .icon {
-    width: 1.85em;
-    height: 1.85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .icon__elem{
-        margin-top: 3px;
         display: inline-block;
-        width: calc(100% - 13px);
-        height: calc(100% - 6px);
+        width: 15px;
+        height: 18px;
         -webkit-mask-size: 100%;
         mask-size: 100%;
         -webkit-mask-repeat: no-repeat;

@@ -1,0 +1,36 @@
+.mail__details {
+  padding: 30px 25px;
+  // color: #4a4a4a;
+  .mail__details__header {
+    .avatar {
+      width: 80px;
+      height: 80px;
+    }
+    .mail__user__name {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .mail__user__emailid {
+      color: #b5b5b5;
+    }
+    .mail__time {
+      font-weight: 600;
+    }
+    .mail__user__recipients {
+      color: #8782c5;
+    }
+  }
+  .mail__details__content {
+    padding: 10px 100px;
+    .mail__intro{
+      font-weight: 600;
+      font-size: 24px;
+      color: black;
+    }
+    .content {
+      letter-spacing: 1px;
+      line-height: 2;
+      color: #2b6d5b;
+    }
+  }
+}

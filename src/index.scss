@@ -1,15 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 @mixin width() {
@@ -47,7 +38,7 @@ code {
       margin-bottom: unquote(($i) + '%');
     }
     .m-v-#{$i} {
-      margin: unquote(($i) + '%') 0;
+      margin: unquote(($i) + '%') 0 !important ;
     }
     .m-h-#{$i} {
       margin: 0 unquote(($i) + '%');
@@ -62,6 +53,9 @@ code {
 }
 .ai-c {
   align-items: center;
+}
+.ai-fe {
+  align-items: flex-end;
 }
 .jc-c {
   justify-content: center;
@@ -90,11 +84,33 @@ code {
   text-align: center;
 }
 .btn {
-  padding: 5px 12px ;
+  padding: 5px 12px;
   border: 1px solid #e8e6e6;
-  color: white;
   background: white;
   border-radius: 3px;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+}
+.btn-primary {
+  border: none;
+  color: white;
+  background: #3ab493;
+  padding: 15px;
+  font-weight: 600;
+}
+.uppercase::first-letter {
+  text-transform: uppercase;
+}
+.popup-content {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px 1px #808080;
+}
+.popup-overlay{
+  background: #00000057!important;
 }

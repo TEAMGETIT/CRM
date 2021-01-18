@@ -17,7 +17,7 @@ function MailBoxLabels() {
       <h4 className="m-v-5 mailbox__controlpanel__header">Labels</h4>
       <div className="d-flex">
         {labels.map((label) => (
-          <div className="d-flex ai-c jc-c m-1 label__elm">
+          <div className="d-flex ai-c jc-c m-1 controlpanel__label__elm">
             <Icon name="tag" color="bg--color1"/>
             {label}
           </div>

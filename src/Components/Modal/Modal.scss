@@ -1,0 +1,49 @@
+@import '../../Scss/colors.scss';
+
+$font-stack: 'Source Sans Pro', sans-serif;
+
+.modal {
+  font-family: $font-stack;
+  .modal__header {
+    background-color: $primaryColor;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    box-sizing: border-box;
+    .close {
+      cursor: pointer;
+    }
+  }
+  .modal__content {
+    padding: 20px;
+  }
+  .MuiInput-underline:before {
+    border-bottom: 1px solid #00000014;
+  }
+  .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 1px solid #00000014;
+  }
+  .text__area {
+    height: 200px;
+    overflow: scroll;
+    .MuiOutlinedInput-input {
+      padding: 0;
+    }
+    .MuiInput-underline:before {
+      border-bottom: none;
+    }
+    .MuiInput-underline:hover:not(.Mui-disabled):before {
+      border-bottom: none;
+    }
+    .MuiInput-underline:after {
+      border-bottom: none;
+    }
+  }
+  .create__mail--action {
+    .btn {
+      padding: 10px 15px;
+      border-radius: 20px;
+    }
+  }
+}

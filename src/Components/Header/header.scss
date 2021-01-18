@@ -7,31 +7,41 @@
   justify-content: space-between;
   background-color: $white;
   .menu {
-    overflow: visible;
-    width: 2.2em;
-    height: 2em;
     .icon__elem {
-      margin: 0;
-      width: 100%;
-      height: 100%;
+      width: 2em;
+      height: 2em;
       background: $primaryColor;
     }
   }
-  .global__search{
-      margin-left: 20px;
-      margin-top: 3px;
-      color: $primaryColor;
-      font-size: 18px;
+  .global__search {
+    margin-left: 20px;
+    margin-top: 3px;
+    color: $primaryColor;
+    font-size: 18px;
+    font-weight: 300;
   }
-  .header__action__elm{
-    .header__icon--color{
+  .header__action__elm {
+    .header__icon--color {
       background: $headerIconColor;
     }
+    .header__mail__icon {
+      .MuiBadge-colorPrimary {
+        background-color: $orangeHue1;
+      }
+    }
+    .header__notification__icon {
+      .MuiBadge-colorPrimary {
+        background-color: $greenHue1;
+      }
+    }
+    .icon__elem {
+      width: 18px;
+      height: 18px;
+      background: $primaryColor;
+    }
     .log--out {
-      margin-top: 4px;
       color: $headerIconColor;
       font-weight: 600;
     }
   }
-  
 }

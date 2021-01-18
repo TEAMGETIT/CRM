@@ -39,13 +39,20 @@ function SideExpansionPanel({ location, isPanelOpen }) {
     return (
       <Link to={routePath}>
         <div
-          className={`side-menu ${
+          className={`side-menu ai-c ${
             curretRoutePath === routePath ? 'selected' : ''
           }`}
         >
           <Icon name={iconName} className="customized-sidebar-icon" />
-          <span className="menu-item-header">
-            {sideBarOpen ? displayName : ''}
+          <span
+            className={
+              'menu-item-header ' +
+              (sideBarOpen
+                ? 'menu__displayname--fadeIn'
+                : 'menu__displayname--fadeout')
+            }
+          >
+            {displayName}
           </span>
         </div>
       </Link>
@@ -57,15 +64,13 @@ function SideExpansionPanel({ location, isPanelOpen }) {
     }
   }, [location]);
 
-  useEffect(() =>{
-    setSideBarOpen(isPanelOpen)
-  }, [isPanelOpen])
+  useEffect(() => {
+    setSideBarOpen(isPanelOpen);
+  }, [isPanelOpen]);
 
   return (
     <div className="sidebar" style={{ width: sideBarOpen ? '185px' : '70px' }}>
-      <div className="header">
-        IN+
-      </div>
+      <div className="header">IN+</div>
       <div className="side-menu-holder">
         {expansionPannelIconsData.map((iconData) => (
           <SideExpansionPanelElm

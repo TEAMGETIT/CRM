@@ -1,4 +1,9 @@
-.mail__list{
+.mailbox {
+  min-height: 92vh;
+  .mail__list {
     border: 0.5px solid #e8e6e6;
     background-color: white;
+    border-radius: 4px;
+  }
+  
 }

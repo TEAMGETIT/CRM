@@ -8,8 +8,8 @@
   z-index: 1;
   top: 0;
   left: 0;
-  overflow-x: hidden;
-  transition: width 0.5s;
+  transition: .3s all ease;
+
   .header {
     background-color: $headerColor;
     display: flex;
@@ -22,11 +22,12 @@
   .side-menu-holder {
     .side-menu {
       display: flex;
+      height: 55px;
       &.selected {
         background: #293846;
         border-left: 4px solid $selectedBorder;
         .customized-sidebar-icon {
-          margin: 13px 14px;
+          margin: 13px 26px;
         }
         .icon {
           .icon__elem--color {
@@ -35,7 +36,6 @@
         }
       }
       .menu-item-header {
-        padding-top: 16px;
         color: $white;
         font-weight: 600;
         font-size: 15px;
@@ -44,11 +44,19 @@
     a {
       text-decoration: none;
     }
+    .menu__displayname--fadeout {
+      overflow: hidden;;
+      transition: 2s all ease;
+    }
+    .menu__displayname--fadeIn {
+      overflow: auto;
+      transition: .3s all ease;
+    }
   }
   .customized-sidebar-icon {
     // background: #292c64;
     text-align: center;
-    margin: 13px 18.7px;
+    margin: 13px 28.1px;
     border-radius: 5px;
   }
 }

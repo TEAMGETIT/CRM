@@ -9,19 +9,19 @@ $font-stack: 'Source Sans Pro', sans-serif;
   overflow: hidden;
 }
 
-.bg--red {
+.bg--red, .documents {
   background: $redHue1;
 }
-.bg--green {
+.bg--green,  .work{
   background: $greenHue1;
 }
-.bg--blue {
+.bg--blue, .advertising {
   background: $blueHue1;
 }
-.bg--blue2 {
+.bg--blue2, .social {
   background: $blueHue2;
 }
-.bg--orange {
+.bg--orange, .clients {
   background: $orangeHue1;
 }
 .bg--white {
