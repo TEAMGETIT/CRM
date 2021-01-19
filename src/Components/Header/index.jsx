@@ -1,5 +1,5 @@
 import React from 'react';
-// import './Header.scss';
+import './Header.scss';
 import Icon from '../Icon';
 import Badge from '@material-ui/core/Badge';
 
