@@ -5,26 +5,21 @@ import MailBoxLabels from './MailBoxLabels';
 import CreateMail from './CreateMail';
 import './MailBoxControlPanel.scss';
 
-function MailBoxControlPanel() {
+function MailBoxControlPanel({ selectedFolder, unreadCount }) {
   const [openCreateMail, setOpenCreateMail] = useState(false);
-  console.log(openCreateMail);
   const closeModal = () => {
-    setOpenCreateMail(false)
-    console.log('test')
+    setOpenCreateMail(false);
   };
   return (
     <div className="mailbox__controlpanel d-flex">
-      <CreateMail
-        isOpen={openCreateMail}
-        onClose={closeModal}
-      />
+      <CreateMail isOpen={openCreateMail} onClose={closeModal} />
       <button
         className="btn btn-primary w-100"
         onClick={() => setOpenCreateMail(true)}
       >
         Compose Mail
       </button>
-      <MailBoxFolders />
+      <MailBoxFolders selectedFolder={selectedFolder} unreadCount={unreadCount} />
       <MailBoxCategories />
       <MailBoxLabels />
     </div>

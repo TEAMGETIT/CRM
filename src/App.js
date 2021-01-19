@@ -6,28 +6,22 @@ import SideExpansionPanel from './Components/SideExpansionPanel';
 import ViewArea from './Components/ViewArea';
 
 function App({ location }) {
-  const [curretRoutePath, setCurretRoutePath] = useState('');
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-  useEffect(() => {
-    if (
-      location.pathname !== '/login' &&
-      !localStorage.getItem('userdetails')
-    ) {
-      window.location.href = '/login';
-    } else {
-      setCurretRoutePath(location.pathname);
-    }
-  }, [location]);
-
+  
   return (
     <div className="app__container">
-      {curretRoutePath === '/login' ? (
+      {location.pathname === '/login' ? (
         <Route path="/login" component={Login} />
-      ) : (
+      ) : localStorage.getItem('userdetails') ? (
         <React.Fragment>
-          <SideExpansionPanel isPanelOpen={isPanelOpen}/>
-          <ViewArea isPanelOpen={isPanelOpen} togglePanel={() => setIsPanelOpen(!isPanelOpen)}/>
+          <SideExpansionPanel isPanelOpen={isPanelOpen} />
+          <ViewArea
+            isPanelOpen={isPanelOpen}
+            togglePanel={() => setIsPanelOpen(!isPanelOpen)}
+          />
         </React.Fragment>
+      ) : (
+        <Redirect push to="/login" />
       )}
     </div>
   );

@@ -11,30 +11,36 @@ function MailBox({}) {
     id: null,
     header: '',
     label: '',
+    count: 0,
   });
-
-  const [selectedFolder, setSelectedFolder] = useState('Inbox');
+  const [unreadCount, setUnreadCount] = useState(0);
+  const [selectedFolder, setSelectedFolder] = useState('inbox');
 
   const viewMailDetails = (mailDeatils) => {
-    console.log(mailDeatils)
     setSelectedMailDetails({
       id: mailDeatils.id,
       header: mailDeatils.subject,
       label: mailDeatils.label,
     });
+    if (!mailDeatils.is_read) {
+      setUnreadCount(unreadCount + 1);
+    }
   };
 
   const resetView = () => {
     setSelectedMailDetails({
       id: null,
       header: '',
-      lable: ''
+      lable: '',
     });
   };
   return (
     <div className="w-100 d-flex mailbox">
       <div className="w-30  m-t-2 ">
-        <MailBoxControlPanel />
+        <MailBoxControlPanel
+          selectedFolder={selectedFolder}
+          unreadCount={unreadCount}
+        />
       </div>
       <div className="w-67 m-t-2 m-r-2 mail__list">
         <MailActionBar
@@ -46,7 +52,12 @@ function MailBox({}) {
         {!selectedMailDeatils.id && (
           <MailList viewMailDetails={viewMailDetails} />
         )}
-        {selectedMailDeatils.id && <MailDetails />}
+        {selectedMailDeatils.id && (
+          <MailDetails
+            mailId={selectedMailDeatils.id}
+            folder={selectedFolder}
+          />
+        )}
       </div>
     </div>
   );

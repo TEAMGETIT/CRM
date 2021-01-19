@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import './Login.scss';
 import { withRouter, Route, Redirect } from 'react-router-dom';
+import { loginService } from '../../Services/LoginService';
 
 function Login() {
   const [formValue, setFormValue] = useState({
@@ -16,10 +17,18 @@ function Login() {
     });
   };
 
-  const signIn = () => {
-    localStorage.setItem('userdetails', JSON.stringify({formValue}))
-    window.location.href = '/dashboard'
+  const signIn = async () => {
+    const formData = new FormData();
+    formData.append('username', formValue.username);
+    formData.append('password', formValue.password);
+    const serviceResponse = await loginService(formData);
+    if (serviceResponse.status === 200) {
+      localStorage.setItem('userdetails',  JSON.stringify(serviceResponse.data));
+      localStorage.setItem('authenticationToken', serviceResponse.data.token)
+      window.location.href = '/dashboard';
+    }
   };
+
   return (
     <div className="w-100 d-flex">
       <div className="w-65" style={{ height: '100%', overflow: 'hidden' }}>

@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Modal from '../../Modal';
 import './MailBoxControlPanel.scss';
+import { sendMailService } from '../../../Services/MailService';
 
 function CreateMail({ isOpen, onClose }) {
+  const [formValue, setFormValue] = useState({
+    toUserEmail: '',
+    subject: '',
+    content: '',
+  });
+  const updateFormValue = (e, key) => {
+    setFormValue({
+      ...formValue,
+      [key]: e.target.value,
+    });
+  };
 
-  const updateFormValue = () => {
-    console.log('test')
+  const sendMail = async () => {
+    const formData = new FormData();
+    formData.append('to_user_email', formValue.toUserEmail);
+    formData.append('subject', formValue.subject);
+    formData.append('content', formValue.content);
+    const serviceResponse = await sendMailService(formData);
+    if (serviceResponse.status === 200) {
+      onClose();
+    }
   };
 
   const content = (
@@ -18,7 +37,7 @@ function CreateMail({ isOpen, onClose }) {
           placeholder="To"
           size="small"
           className="w-100 m-v-1"
-          onChange={(e) => updateFormValue(e, 'username')}
+          onChange={(e) => updateFormValue(e, 'toUserEmail')}
         />
         <TextField
           type="Subject"
@@ -26,7 +45,7 @@ function CreateMail({ isOpen, onClose }) {
           placeholder="Subject"
           size="small"
           className="w-100 m-v-1"
-          onChange={(e) => updateFormValue(e, 'username')}
+          onChange={(e) => updateFormValue(e, 'subject')}
         />
         <TextField
           type="text"
@@ -35,11 +54,13 @@ function CreateMail({ isOpen, onClose }) {
           size="small"
           multiline
           className="w-100 m-v-1 text__area"
-          onChange={(e) => updateFormValue(e, 'username')}
+          onChange={(e) => updateFormValue(e, 'content')}
         />
       </div>
       <div className="create__mail--action w-100 d-flex jc-fe">
-        <button className="btn btn-primary" onClick={onClose}>Send</button>
+        <button className="btn btn-primary" onClick={sendMail}>
+          Send
+        </button>
       </div>
     </div>
   );

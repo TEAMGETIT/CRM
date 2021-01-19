@@ -35,7 +35,6 @@ function SideExpansionPanel({ location, isPanelOpen }) {
   const [curretRoutePath, setCurretRoutePath] = useState();
 
   const SideExpansionPanelElm = ({ routePath, displayName, iconName }) => {
-    console.log(iconName);
     return (
       <Link to={routePath}>
         <div

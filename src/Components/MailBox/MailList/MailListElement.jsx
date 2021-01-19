@@ -3,7 +3,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Label from '../../Label';
 
 function MailListElement({
-  data: { from, subject, attachment, time, read, label },
+  data: { username, subject, attachment, time, read, label },
   onMailElmClick,
 }) {
   const [checked, setChecked] = useState(false);
@@ -26,7 +26,7 @@ function MailListElement({
         />
       </div>
       <div className="mail__Elm__from w-29 d-flex ai-c jc-sb m-r-1">
-        {from}
+        {username}
         <Label content={label} bgColorClass={label} />
       </div>
       <div className="mail__Elm__subject w-50">{subject}</div>
