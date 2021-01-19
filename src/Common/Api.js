@@ -1,4 +1,4 @@
-const endpoint = 'http://127.0.0.1:8000/api';
+const endpoint = 'https://crm-instance.herokuapp.com/api';
 const urls = {
   LOGIN: () => '/login',
   SIGN_OUT: () => '/logout',
