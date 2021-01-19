@@ -1,0 +1,47 @@
+@import '../../Scss/colors.scss';
+
+.header__bar {
+  height: 8vh;
+  box-shadow: 2px 1px 2px 1px #eae7e7;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  .menu {
+    .icon__elem {
+      width: 2em;
+      height: 2em;
+      background: $primaryColor;
+    }
+  }
+  .global__search {
+    margin-left: 20px;
+    margin-top: 3px;
+    color: $primaryColor;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .header__action__elm {
+    .header__icon--color {
+      background: $headerIconColor;
+    }
+    .header__mail__icon {
+      .MuiBadge-colorPrimary {
+        background-color: $orangeHue1;
+      }
+    }
+    .header__notification__icon {
+      .MuiBadge-colorPrimary {
+        background-color: $greenHue1;
+      }
+    }
+    .icon__elem {
+      width: 18px;
+      height: 18px;
+      background: $primaryColor;
+    }
+    .log--out {
+      color: $headerIconColor;
+      font-weight: 600;
+    }
+  }
+}
