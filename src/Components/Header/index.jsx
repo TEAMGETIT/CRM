@@ -27,9 +27,11 @@ function Header({ togglePanel }) {
             <Icon name="notification" color="header__icon--color" />
           </Badge>
         </div>
-        <Icon name="logout" className="m-h-5" color="header__icon--color" />
-        <span className="log--out" onClick={logout}>
-          Log out
+        <span style={{'cursor': 'pointer'}} onClick={logout}>
+          <Icon name="logout" className="m-h-5" color="header__icon--color" />
+          <span className="log--out" >
+            Log out
+          </span>
         </span>
       </div>
     </div>

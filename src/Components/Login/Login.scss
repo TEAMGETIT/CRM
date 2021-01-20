@@ -1,5 +1,11 @@
 .login {
-    .text-field {
-        margin: 20px 0;
+  .text-field {
+    margin: 20px 0;
+  }
+  .MuiTextField-root {
+    width: 100%;
+    input {
+      height: 25px;
     }
+  }
 }

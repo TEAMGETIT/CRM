@@ -22,14 +22,14 @@ function Login() {
     const formData = new FormData();
     formData.append('username', formValue.username);
     formData.append('password', formValue.password);
-    setLoader(true)
+    setLoader(true);
     const serviceResponse = await loginService(formData);
     if (serviceResponse.status === 200) {
       localStorage.setItem('userdetails', JSON.stringify(serviceResponse.data));
       localStorage.setItem('authenticationToken', serviceResponse.data.token);
       window.location.href = '/dashboard';
     }
-    setLoader(false)
+    setLoader(false);
   };
 
   return (
@@ -41,22 +41,22 @@ function Login() {
           src={`${window.location.origin}/images/login.jpg`}
         />
       </div>
-      <div className="w-35">
-        <div className="login">
+      <div className="w-35 d-flex ai-c">
+        <div className="login w-100">
           <div className="header">
             <h3>Login</h3>
           </div>
-          <div className="text-field">
+          <div className="w-70 text-field">
             <TextField
               type="text"
-              name="email"
-              placeholder="Email"
+              name="username"
+              placeholder="Username"
               variant="outlined"
               size="small"
               onChange={(e) => updateFormValue(e, 'username')}
             />
           </div>
-          <div className="text-field">
+          <div className="w-70 text-field">
             <TextField
               type="password"
               name="password"
@@ -66,9 +66,9 @@ function Login() {
               onChange={(e) => updateFormValue(e, 'password')}
             />
           </div>
-          <div className="btn-holder">
-            <button size="normal" className="btn" onClick={() => signIn()}>
-              Sign In
+          <div className="btn-holder d-flex w-70 jc-c">
+            <button size="normal" className="btn btn-primary" onClick={() => signIn()}>
+              Login
             </button>
           </div>
         </div>
