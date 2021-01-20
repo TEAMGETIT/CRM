@@ -34,12 +34,17 @@ function MailBox({}) {
       lable: '',
     });
   };
+  const changeFolder =(folder)=> {
+    console.log(folder)
+    setSelectedFolder(folder)
+  }
   return (
     <div className="w-100 d-flex mailbox">
       <div className="w-30  m-t-2 ">
         <MailBoxControlPanel
           selectedFolder={selectedFolder}
           unreadCount={unreadCount}
+          changeFolder={changeFolder}
         />
       </div>
       <div className="w-67 m-t-2 m-r-2 mail__list">
@@ -50,7 +55,7 @@ function MailBox({}) {
           label={selectedMailDeatils.label}
         />
         {!selectedMailDeatils.id && (
-          <MailList viewMailDetails={viewMailDetails} />
+          <MailList viewMailDetails={viewMailDetails} selectedFolder={selectedFolder}/>
         )}
         {selectedMailDeatils.id && (
           <MailDetails

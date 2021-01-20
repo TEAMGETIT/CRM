@@ -2,8 +2,14 @@ import React from 'react';
 import './Header.scss';
 import Icon from '../Icon';
 import Badge from '@material-ui/core/Badge';
+import Loader from '../Loader';
 
 function Header({ togglePanel }) {
+  const logout = () => {
+    localStorage.removeItem('authenticationToken');
+    localStorage.removeItem('userdetails');
+    window.location.href = '/login';
+  };
   return (
     <div className="w-100 header__bar d-flex">
       <div className="d-flex m-l-2">
@@ -22,7 +28,9 @@ function Header({ togglePanel }) {
           </Badge>
         </div>
         <Icon name="logout" className="m-h-5" color="header__icon--color" />
-        <span className="log--out">Log out</span>
+        <span className="log--out" onClick={logout}>
+          Log out
+        </span>
       </div>
     </div>
   );

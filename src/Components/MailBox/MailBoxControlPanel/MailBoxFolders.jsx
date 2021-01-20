@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import ListItem from '../../ListItem';
 import Label from '../../Label';
 import { getMailFolderService } from '../../../Services/MailService';
+import Loader from '../../Loader';
+
 const mailFoldersDict = {
   inbox: {
     folderDisplayname: 'Inbox',
@@ -24,16 +26,15 @@ const mailFoldersDict = {
   trash: { folderDisplayname: 'Trash', id: 'trash', iconName: 'trash' },
 };
 
-function MailBoxFolders({ selectedFolder, unreadCount }) {
+function MailBoxFolders({ selectedFolder, unreadCount, changeFolder }) {
   const [folderList, setFolderList] = useState([]);
-
+  const [loader, setLoader] = useState(false);
   useEffect(() => {
     console.log('test12');
     getMailFoldersData();
   }, []);
 
   useEffect(() => {
-    console.log('test_count', unreadCount);
     const folderListCpy = [...folderList];
     folderListCpy.forEach((folder) => {
       if (selectedFolder === folder.id) {
@@ -46,6 +47,7 @@ function MailBoxFolders({ selectedFolder, unreadCount }) {
   }, [unreadCount]);
 
   const getMailFoldersData = async () => {
+    setLoader(true)
     const serviceResponse = await getMailFolderService();
     if (serviceResponse && serviceResponse.status === 200) {
       const mailFolderDatas = serviceResponse.data.mail_folders;
@@ -59,10 +61,13 @@ function MailBoxFolders({ selectedFolder, unreadCount }) {
       });
       setFolderList(folderListCpy);
     }
+    setLoader(false)
+
   };
 
   return (
     <div className="w-100">
+      <Loader status={loader}/>
       <h4 className="m-v-5 mailbox__controlpanel__header">FOLDERS</h4>
       {folderList.map((folder) => (
         <div className="d-flex ai-c m-v-4 folder__item jc-sb">
@@ -70,6 +75,7 @@ function MailBoxFolders({ selectedFolder, unreadCount }) {
             itemName={folder.folderDisplayname}
             itemIconName={folder.iconName}
             iconColor="mail__folder__icon--color"
+            onItemClick={() => changeFolder(folder.id)}
           />
           {folder.totalUnread && folder.totalUnread !== 0 && (
             <Label content={folder.totalUnread} bgColorClass={folder.color} />

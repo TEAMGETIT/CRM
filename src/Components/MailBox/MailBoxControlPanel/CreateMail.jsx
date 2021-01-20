@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Modal from '../../Modal';
 import './MailBoxControlPanel.scss';
 import { sendMailService } from '../../../Services/MailService';
+import Loader from '../../Loader';
 
 function CreateMail({ isOpen, onClose }) {
   const [formValue, setFormValue] = useState({
@@ -10,6 +11,8 @@ function CreateMail({ isOpen, onClose }) {
     subject: '',
     content: '',
   });
+
+  const [loader, setLoader] = useState(false);
   const updateFormValue = (e, key) => {
     setFormValue({
       ...formValue,
@@ -22,14 +25,17 @@ function CreateMail({ isOpen, onClose }) {
     formData.append('to_user_email', formValue.toUserEmail);
     formData.append('subject', formValue.subject);
     formData.append('content', formValue.content);
+    setLoader(true);
     const serviceResponse = await sendMailService(formData);
     if (serviceResponse.status === 200) {
       onClose();
     }
+    setLoader(false)
   };
 
   const content = (
     <div className="w-100 d-flex">
+      <Loader status={loader} />
       <div className="d-flex w-100 create__mail">
         <TextField
           type="text"

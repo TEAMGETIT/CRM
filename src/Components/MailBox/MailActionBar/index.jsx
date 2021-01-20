@@ -8,7 +8,7 @@ function MailActionBar({ header, isFolder, viewList, label }) {
   return (
     <div className="w-100 mail__actionbar">
       <div className="w-100 d-flex ai-c jc-sb">
-        <h1 className="m-v-1">{header}</h1>
+        <h1 className="m-v-1 uppercase">{header}</h1>
         {isFolder && <SearchBox placeholder="Search email" />}
       </div>
       <div className="d-flex jc-sb">

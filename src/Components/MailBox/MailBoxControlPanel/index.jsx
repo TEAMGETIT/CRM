@@ -5,7 +5,7 @@ import MailBoxLabels from './MailBoxLabels';
 import CreateMail from './CreateMail';
 import './MailBoxControlPanel.scss';
 
-function MailBoxControlPanel({ selectedFolder, unreadCount }) {
+function MailBoxControlPanel({ selectedFolder, unreadCount, changeFolder }) {
   const [openCreateMail, setOpenCreateMail] = useState(false);
   const closeModal = () => {
     setOpenCreateMail(false);
@@ -19,7 +19,11 @@ function MailBoxControlPanel({ selectedFolder, unreadCount }) {
       >
         Compose Mail
       </button>
-      <MailBoxFolders selectedFolder={selectedFolder} unreadCount={unreadCount} />
+      <MailBoxFolders
+        selectedFolder={selectedFolder}
+        unreadCount={unreadCount}
+        changeFolder={changeFolder}
+      />
       <MailBoxCategories />
       <MailBoxLabels />
     </div>
